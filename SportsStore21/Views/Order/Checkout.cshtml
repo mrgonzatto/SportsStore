@@ -1,0 +1,63 @@
+﻿@model Order
+
+@{ 
+    Layout = "_Layout";
+}
+
+<h2>Realize seu pedido</h2>
+<p>Por favor informe seus dados, esperamos que tenha uma 
+    ótima experiência.</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="checkout" method="post">
+
+    <h3>Enviar para:</h3>
+    <div class="form-group">
+        <label>Nome:</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <h3>Endereço:</h3>
+    <div class="form-group">
+        <label>Linha 1:</label>
+        <input asp-for="Line1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Linha 2:</label>
+        <input asp-for="Line2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Linha 3:</label>
+        <input asp-for="Line3" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Cidade:</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Estado:</label>
+        <input asp-for="State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>CEP:</label>
+        <input asp-for="Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>País:</label>
+        <input asp-for="Country" value="Brasil" class="form-control" />
+    </div>
+
+    <h3>Opção de presente?</h3>
+    <div class="checkbox">
+        <label>
+            <input asp-for="GiftWrap" /> Embale para presente!
+        </label>
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" 
+               value="Finalizar pedido." />
+    </div>
+
+</form>
